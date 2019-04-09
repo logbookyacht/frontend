@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { LogComponent } from './log/log.component';
 import { TripsComponent } from './trips/trips.component';
+import { Routes } from '@angular/router';
 
 @NgModule({
   declarations: [
@@ -22,3 +23,4 @@ import { TripsComponent } from './trips/trips.component';
   bootstrap: [AppComponent]
 })
 export class AppModule { }
+
