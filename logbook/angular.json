@@ -24,7 +24,10 @@
             ],
             "styles": [
               "src/styles.css",
-              "src/app/app.component.css"
+              "src/app/app.component.css",
+              "src/app/home/home.component.css",
+              "src/app/log/log.component.css",
+              "src/app/trips/trips.component.css"
             ],
             "scripts": [],
             "es5BrowserSupport": true
