@@ -5,15 +5,12 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { LogComponent } from './log/log.component';
-import { TripsComponent } from './trips/trips.component';
-import { Routes } from '@angular/router';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
-    LogComponent,
-    TripsComponent
+    LogComponent
   ],
   imports: [
     BrowserModule,
@@ -23,4 +20,3 @@ import { Routes } from '@angular/router';
   bootstrap: [AppComponent]
 })
 export class AppModule { }
-
