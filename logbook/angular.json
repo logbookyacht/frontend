@@ -23,7 +23,11 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.css"
+              "src/styles.css",
+              "src/app/home/component.css",
+              "src/app/log/component.css",
+              "src/app/trips/component.css"
+
             ],
             "scripts": [],
             "es5BrowserSupport": true
