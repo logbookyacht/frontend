@@ -1,3 +1,27 @@
 <p>
   trips works!
 </p>
+<body>
+<div class="container">
+  <table class="table table-striped">
+    <thead>
+        <tr>
+          <th>Title</th>
+          <th>Date</th>
+          <th>From</th>
+          <th>To</th>
+          <th>Distance</th>
+        </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let log of logs">
+        <td>{{ log.title }}</td>
+        <td>{{ log.date }}</td>
+        <td>{{ log.from }}</td>
+        <td>{{ log.to }}</td>
+        <td>{{ log.distance }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+</body>
