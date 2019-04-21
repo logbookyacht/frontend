@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import Log from 'src/app/models/Log';
+import Log from 'src/app/_shared/models/Log';
 
 @Component({
   selector: 'app-trips',
