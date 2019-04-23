@@ -1,21 +1,32 @@
+    
 import { Injectable } from '@angular/core';
-import {HttpClient} from '@angular/common/http';
-import {User} from '../models/user';
+import { HttpClient, HttpHeaders, HttpErrorResponse } from '@angular/common/http';
+import { Observable, of } from 'rxjs';
+import { map, catchError, tap } from 'rxjs/operators';
 
-import { tap } from 'rxjs/operators'; 
+const endpoint = 'http://localhost:8090/';
+const httpOptions = {
+  headers: new HttpHeaders({
+    'Content-Type':  'application/json'
+  })
+};
 
 @Injectable({
   providedIn: 'root'
 })
 export class ApiService {
-  apiURL: string = 'http://localhost:8090';
 
-  public nextPage: string = "";
-  
-  constructor(private httpClient: HttpClient) { }
+  constructor(private http: HttpClient) { }
 
-  public getUsers(){
-    return this.httpClient.get<User[]>(`${this.apiURL}/user`)
+  private extractData(res: Response) {
+    let body = res;
+    return body || { };
   }
 
+  
+login(): Observable<any> {
+  return this.http.post(endpoint + 'user/login','{"email":"rene.roets@outlook.com", "password":"Kaas123"}',httpOptions).pipe(
+    map(this.extractData));
+}
+  
 }
