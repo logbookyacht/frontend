@@ -25,7 +25,7 @@ export class ApiService {
 
   
 login(): Observable<any> {
-  return this.http.post(endpoint + 'user/login','{"email":"rene.roets@outlook.com", "password":"Kaas123"}',httpOptions).pipe(
+  return this.http.post(endpoint + 'users/login','{"email":"rene.roets@outlook.com", "password":"Kaas123"}',httpOptions).pipe(
     map(this.extractData));
 }
   
