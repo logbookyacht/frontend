@@ -5,8 +5,13 @@
     <li><a routerLink="log">Log</a></li>
     <li><a routerLink="trips">Trips</a></li>
     <li><a routerLink="">About</a></li>
-    <li><button (click)="Login()">Login</button></li>
+    <li><button (click)="getUser()">KAAS</button></li>
   </ul>
+
+  <tr *ngFor="let users of User">
+    <td>{{ users.first_name }}</td>
+   
+  </tr>
   </body>
   
 <router-outlet></router-outlet>
