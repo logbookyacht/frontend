@@ -11,6 +11,7 @@ import { HomeComponent } from './components/home/home/home.component';
 import { TripsComponent } from './components/trips/trips.component';
 import { RegisterComponent } from './components/register/register.component';
 import { HarborComponent } from './components/harbor/harbor.component';
+import { LogComponent } from './components/log/log.component';
 
 
 @NgModule({
@@ -21,6 +22,7 @@ import { HarborComponent } from './components/harbor/harbor.component';
     TripsComponent,
     RegisterComponent,
     HarborComponent,
+    LogComponent
   ],
   imports: [
     BrowserModule,
