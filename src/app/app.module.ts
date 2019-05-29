@@ -12,7 +12,7 @@ import { TripsComponent } from './components/trips/trips.component';
 import { RegisterComponent } from './components/register/register.component';
 import { HarborComponent } from './components/harbor/harbor.component';
 import { LogComponent } from './components/log/log.component';
-import { BoatComponent } from './components/boat/boat/boat.component';
+import { BoatComponent} from './components/boat/boat.component';
 
 
 @NgModule({

@@ -11,7 +11,6 @@ import { filter } from 'rxjs/operators';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-
   currentUser: User;
 
   constructor(private router: Router, private authService: AuthenticationService){

@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { RequestOptions } from '@angular/http'; 
+import { RequestOptions, Headers } from '@angular/http'; 
 import { Boat } from 'src/app/models/boat';
 import { User } from 'src/app/models/user';
 
@@ -14,7 +14,10 @@ apiUrl = 'http://localhost:8090'
 constructor(private http: HttpClient) { }
 
 add(boat: Boat){
-  return this.http.post(`${this.apiUrl}/boat`,JSON.stringify(boat))
+  var headers = new Headers();
+  headers.append('Content-Type','application/json')
+  var options = new RequestOptions({headers: headers});
+  return this.http.post(`${this.apiUrl}/Boat`,JSON.stringify(boat))
 }
 
 getByUser(user: User){

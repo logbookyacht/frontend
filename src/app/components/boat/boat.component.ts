@@ -30,7 +30,7 @@ export class BoatComponent implements OnInit {
   }
   get f() { return this.BoatForm.controls}
 
-  onSubmit() {
+  async onSubmit() {
     this.submitted = true;
 
     if (this.BoatForm.invalid) {
@@ -46,7 +46,7 @@ export class BoatComponent implements OnInit {
     boat.brand = this.f.brand.value;
     boat.lenghtft = this.f.lenghtft.value;
    
-    this.BoatService.add(boat)
+    await this.BoatService.add(boat).toPromise()
   }
 
 }
