@@ -1,5 +1,9 @@
 import { Component, OnInit } from '@angular/core';
+import { User } from 'src/app/models//User/user';
 import { Log } from 'src/app/models/Log/log';
+import { LogService } from 'src/app/services/Log/log.service';
+import { AuthenticationService } from 'src/app/services/AuthenticationService/authentication-service.service';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -8,28 +12,31 @@ import { Log } from 'src/app/models/Log/log';
   styleUrls: ['./trips.component.css']
 })
 export class TripsComponent implements OnInit {
-
-    logs: Log[]= [{
-      id: 1,
-      title: 'Bruinisse',
-      date: 2,
-      from: 'Bruinisse',
-      to: 'Port Zeelande',
-      distance: 14,
-    },
-    {
-    id: 2,
-    title: 'Test',
-    date: 2,
-    from: 'a',
-    to: 'a',
-    distance: 4
-    }
-  ]
-
-  constructor() { }
-
-  ngOnInit() {
+    currentUser: User;
+    logs  = [];
+   
+  constructor(authService: AuthenticationService, private logService: LogService, private router:Router) {
+    authService.currentUser.subscribe((x)=> {
+      this.currentUser = x;
+    });
   }
+
+  async ngAfterViewInit() {
+
+    var pResult = await this.logService.getAll().toPromise() as any
+    console.log(pResult)
+    for (let i = 0; i < pResult.content.length; i++) {
+      var log = pResult.content[i] as Log;
+      console.log(log)
+      this.logs.push(log)
+    }
+    localStorage.setItem('logs', JSON.stringify(this.logs));
+  }
+
+   
+  ngOnInit() {
+    
+  }
+
 
 }

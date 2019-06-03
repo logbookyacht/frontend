@@ -1,6 +1,69 @@
 <p></p><body class="center">
 <h2> Welcome to your homepage </h2>
 
-Here will be displayed some of you information about your Boat, last visited harbors etc
-</body>
+Here will be displayed some of you information about your Boat, last visited harbors etc.
+    
+<div class="container">
+    
+        <table class="table table-striped">
+        <thead>
+                <tr>
+                  <th>Name Boat</th>
+                  <th>Harbor</th>
+                  <th>Brand</th>
+                  <th>Length in ft</th>
+                </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let boat of boats">
+                <td>{{ boat.name }}</td>
+                <td>{{ boat.harbor }}</td>
+                <td>{{ boat.brand }}</td>
+                <td>{{ boat.ft }}</td>          
+              </tr>
+            </tbody>
+            </table>
 
+
+        <table class="table table-striped">
+          <thead>
+              <tr>
+                <th>Title</th>
+                <th>Date</th>
+                <th>Distance</th>
+                <th>From</th>
+                <th>To</th>
+      
+              </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let log of logs">
+              <td>{{ log.title }}</td>
+              <td>{{ log.date }}</td>
+              <td>{{ log.distance }}</td>
+              <td>{{ log.fromharbor }}</td>
+              <td>{{ log.toharbor }}</td>
+            
+            </tr>
+          </tbody>
+        </table>
+
+
+<!-- 
+    <table *ngFor="let boat of boats" >
+        <tr>
+          <th>Name</th>
+          <td>{{ boat.name }}</td>
+        </tr>
+        <tr>
+          <th>Harbor</th>
+          <td>{{ boat.harbor }}</td>
+        </tr>
+        <tr>
+          <th>Brand:</th>
+          <td>{{ boat.brand }}</td>
+        </tr><tr>
+            <th>Length:</th>
+            <td>{{ boat.ft }}</td>
+          </tr>
+      </table> -->

@@ -1,8 +1,8 @@
 export class Log {
     id: number;
     title: string;
-    date: number;
-    from: String;
-    to: String;
+    date: string;
     distance: number;
+    fromharbor: String;
+    toharbor: String;  
 }

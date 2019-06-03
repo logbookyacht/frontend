@@ -7,18 +7,20 @@
         <tr>
           <th>Title</th>
           <th>Date</th>
+          <th>Distance</th>
           <th>From</th>
           <th>To</th>
-          <th>Distance</th>
+
         </tr>
     </thead>
     <tbody>
       <tr *ngFor="let log of logs">
         <td>{{ log.title }}</td>
         <td>{{ log.date }}</td>
-        <td>{{ log.from }}</td>
-        <td>{{ log.to }}</td>
         <td>{{ log.distance }}</td>
+        <td>{{ log.fromharbor }}</td>
+        <td>{{ log.toharbor }}</td>
+      
       </tr>
     </tbody>
   </table>

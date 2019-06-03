@@ -9,7 +9,6 @@ import { AlertModule } from 'ngx-bootstrap';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HomeComponent } from './components/home/home/home.component';
 import { TripsComponent } from './components/trips/trips.component';
-import { RegisterComponent } from './components/register/register.component';
 import { HarborComponent } from './components/harbor/harbor.component';
 import { LogComponent } from './components/log/log.component';
 import { BoatComponent} from './components/boat/boat.component';
@@ -21,7 +20,6 @@ import { BoatComponent} from './components/boat/boat.component';
     LoginComponent,
     HomeComponent,
     TripsComponent,
-    RegisterComponent,
     HarborComponent,
     LogComponent,
     BoatComponent
