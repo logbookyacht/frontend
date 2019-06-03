@@ -3,5 +3,5 @@ export class Boat {
     name: string;
     harbor: string;
     brand: string;
-    lenghtft: number;
+    ft: number;
 }

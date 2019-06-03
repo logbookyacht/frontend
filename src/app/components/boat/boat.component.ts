@@ -2,7 +2,7 @@ import { Component, OnInit, AfterViewInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators, FormControl } from '@angular/forms';
 
 import { BoatService } from 'src/app/services/Boat/boat.service';
-import { Boat } from 'src/app/models/boat';
+import { Boat } from 'src/app/models/Boat/boat';
 
 
 @Component({
@@ -24,7 +24,7 @@ export class BoatComponent implements OnInit {
       name: ['',Validators.required],
       harbor: ['',Validators.required],
       brand: ['',Validators.required],
-      lenghtft: ['',Validators.required],
+      ft: ['',Validators.required],
     });
 
   }
@@ -44,7 +44,7 @@ export class BoatComponent implements OnInit {
     boat.name = this.f.name.value;
     boat.harbor = this.f.harbor.value;
     boat.brand = this.f.brand.value;
-    boat.lenghtft = this.f.lenghtft.value;
+    boat.ft = this.f.ft.value;
    
     await this.BoatService.add(boat).toPromise()
   }

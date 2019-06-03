@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { log } from 'src/app/models/log';
+import { Log } from 'src/app/models/Log/log';
 
 
 @Component({
@@ -9,19 +9,21 @@ import { log } from 'src/app/models/log';
 })
 export class TripsComponent implements OnInit {
 
-    logs: log[]= [{
+    logs: Log[]= [{
+      id: 1,
       title: 'Bruinisse',
-      date: '12-4-2013 11:23',
+      date: 2,
       from: 'Bruinisse',
       to: 'Port Zeelande',
-      distance: '14'
+      distance: 14,
     },
     {
+    id: 2,
     title: 'Test',
-    date: '124',
+    date: 2,
     from: 'a',
     to: 'a',
-    distance: '1'
+    distance: 4
     }
   ]
 

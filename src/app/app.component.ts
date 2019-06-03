@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { User } from './models/user';
+import { User } from './models/User/user';
 import { Alert } from 'selenium-webdriver';
 import { Router, NavigationStart } from '@angular/router';
 import { AuthenticationService } from './services/AuthenticationService/authentication-service.service';
