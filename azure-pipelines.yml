@@ -22,7 +22,7 @@ steps:
     sshEndpoint: 'OVH'
     sourceFolder: '$(build.artifactstagingdirectory)'
     contents: '/'
-    targetFolder: '/root/desktop/Rene/Angular'
+    targetFolder: '/root/desktop/Rene/Angular/'
     cleanTargetFolder: true
 
 - task: SSH@0
