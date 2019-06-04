@@ -7,12 +7,11 @@ import { LoginComponent } from './components/login/login.component'
 import { HttpClientModule } from '@angular/common/http';
 import { AlertModule } from 'ngx-bootstrap';
 import { ReactiveFormsModule } from '@angular/forms';
-import { HomeComponent } from './components/home/home/home.component';
+import { HomeComponent } from './components/home/home.component';
 import { TripsComponent } from './components/trips/trips.component';
 import { HarborComponent } from './components/harbor/harbor.component';
 import { LogComponent } from './components/log/log.component';
 import { BoatComponent} from './components/boat/boat.component';
-
 
 @NgModule({
   declarations: [
@@ -22,7 +21,7 @@ import { BoatComponent} from './components/boat/boat.component';
     TripsComponent,
     HarborComponent,
     LogComponent,
-    BoatComponent
+    BoatComponent,
   ],
   imports: [
     BrowserModule,
