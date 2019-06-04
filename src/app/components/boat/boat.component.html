@@ -1,7 +1,5 @@
-<p>
-  boat works!
-</p>
-<form [formGroup]="BoatForm" (ngSubmit)="onSubmit()">
+
+<form [formGroup]="BoatForm" class="center" (ngSubmit)="onSubmit()">
   <div class="form-group">
       <label for="name">Name Boat</label>
       <input type="text" formControlName="name" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.name.errors }" />
