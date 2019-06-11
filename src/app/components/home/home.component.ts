@@ -6,6 +6,7 @@ import { BoatService } from 'src/app/services/boat/boat.service';
 import { LogService } from 'src/app/services/Log/log.service';
 import { AuthenticationService } from 'src/app/services/AuthenticationService/authentication-service.service';
 import { Router } from '@angular/router';
+import { HarborService } from 'src/app/services/Harbor/harbor.service';
 
 @Component({
   selector: 'app-home',
@@ -13,12 +14,13 @@ import { Router } from '@angular/router';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
-  currentUser: User;
+  currentUser: User = new User();
   logs  = [];
   boats = [];
+  harbors = [];
  
-constructor(authService: AuthenticationService, private logService: LogService, private boatService: BoatService, private router:Router) {
-  authService.currentUser.subscribe((x)=> {
+constructor(authService: AuthenticationService, private logService: LogService, private boatService: BoatService, private harborService: HarborService, private router:Router) {
+  authService.currentUser.subscribe((x)=> { 
     this.currentUser = x;
   });
 }
@@ -37,6 +39,12 @@ async ngAfterViewInit() {
     var boat = bResult.content[i] as Boat;
     console.log(boat)
     this.boats.push(boat)
+  }
+  var hResult = await this.harborService.getAll().toPromise() as any
+  for (let i = 0; i < bResult.content.length; i++) {
+    var harbor = hResult.content[i] as Boat;
+    console.log(harbor)
+    this.harbors.push(harbor)
   }
   localStorage.setItem('boats', JSON.stringify(this.logs));
 }

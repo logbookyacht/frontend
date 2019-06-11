@@ -4,6 +4,7 @@ import { Alert } from 'selenium-webdriver';
 import { Router, NavigationStart } from '@angular/router';
 import { AuthenticationService } from './services/AuthenticationService/authentication-service.service';
 import { filter } from 'rxjs/operators';
+import { HttpClientModule } from '@angular/common/http'; 
 
 @Component({
   selector: 'app-root',
@@ -13,7 +14,7 @@ import { filter } from 'rxjs/operators';
 export class AppComponent {
   currentUser: User;
 
-  constructor(private router: Router, private authService: AuthenticationService){
+  constructor(private router: Router, private authService: AuthenticationService, HttpClient: HttpClientModule){
     this.authService.currentUser.subscribe(x => this.currentUser = x);
   }
 

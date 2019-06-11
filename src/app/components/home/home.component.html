@@ -48,22 +48,22 @@ Here will be displayed some of you information about your Boat, last visited har
           </tbody>
         </table>
 
+        <table class="table table-striped">
+          <thead>
+              <tr>
+                <th>Title</th>
+                <th>Harbor</th>
+                <th>Spaces</th>
+                <th>Occupied spaces</th>    
+              </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let harbor of harbors">
+              <td>{{ harbor.title }}</td>
+              <td>{{ harbor.harbor }}</td>
+              <td>{{ harbor.spaces }}</td>
+              <td>{{ harbor.occupied }}</td>
+            </tr>
+          </tbody>
+        </table>
 
-<!-- 
-    <table *ngFor="let boat of boats" >
-        <tr>
-          <th>Name</th>
-          <td>{{ boat.name }}</td>
-        </tr>
-        <tr>
-          <th>Harbor</th>
-          <td>{{ boat.harbor }}</td>
-        </tr>
-        <tr>
-          <th>Brand:</th>
-          <td>{{ boat.brand }}</td>
-        </tr><tr>
-            <th>Length:</th>
-            <td>{{ boat.ft }}</td>
-          </tr>
-      </table> -->

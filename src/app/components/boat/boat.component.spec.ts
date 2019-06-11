@@ -1,6 +1,8 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { BoatComponent } from './boat.component';
+import { ReactiveFormsModule } from '@angular/forms';
+import { HttpClient } from '@angular/common/http';
 
 describe('BoatComponent', () => {
   let component: BoatComponent;
@@ -8,7 +10,9 @@ describe('BoatComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ BoatComponent ]
+      declarations: [ BoatComponent ],
+      imports: [ReactiveFormsModule],
+      providers: [{provide:HttpClient}]
     })
     .compileComponents();
   }));

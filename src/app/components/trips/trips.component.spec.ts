@@ -1,6 +1,9 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { TripsComponent } from './trips.component';
+import { ReactiveFormsModule } from '@angular/forms';
+import { HttpClient } from '@angular/common/http';
+import { Router } from '@angular/router';
 
 describe('TripsComponent', () => {
   let component: TripsComponent;
@@ -8,7 +11,9 @@ describe('TripsComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ TripsComponent ]
+      declarations: [ TripsComponent ],
+      imports: [ReactiveFormsModule],
+      providers: [{provide: HttpClient}, {provide: Router}]
     })
     .compileComponents();
   }));
