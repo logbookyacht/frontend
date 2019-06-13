@@ -41,8 +41,8 @@ export class HarborComponent implements OnInit {
 
     harbor.name = this.f.name.value;
     harbor.harbor = this.f.harbor.value;
-    harbor.spaces = this.f.brand.value;
-    harbor.harbor = this.f.ft.value;
+    harbor.spaces = this.f.spaces.value;
+    harbor.occupied = this.f.occupied.value;
    
     await this.HarborService.add(harbor).toPromise()
   }

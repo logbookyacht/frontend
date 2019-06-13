@@ -3,16 +3,16 @@
   <div class="form-group">
       <label for="name">Name Harbor</label>
       <input type="text" formControlName="name" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.name.errors }" />
-      <div *ngIf="submitted && f.name.errors" class="invalid-feedback">
+      <!-- <div *ngIf="submitted && f.name.errors" class="invalid-feedback">
           <div *ngIf="f.name.errors.required">Name Boat is required</div>
-      </div>
+      </div> -->
   </div>
   <div class="form-group">
       <label for="harbor">Harbor</label>
       <input type="text" formControlName="harbor" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.harbor.errors }" />
-      <div *ngIf="submitted && f.harbor.errors" class="invalid-feedback">
+      <!-- <div *ngIf="submitted && f.harbor.errors" class="invalid-feedback">
           <div *ngIf="f.harbor.errors.required">Harbor is required</div>
-      </div>
+      </div> -->
   </div>
   <div class="form-group">
       <label for="spaces">Total spaces</label>

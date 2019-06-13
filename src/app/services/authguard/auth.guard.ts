@@ -3,7 +3,7 @@ import { CanActivate } from '@angular/router/src/utils/preactivation';
 import { Router, ActivatedRouteSnapshot, RouterStateSnapshot } from '@angular/router';
 import { AuthenticationService } from '../AuthenticationService/authentication-service.service';
 
-@Injectable({providedIn: 'root'})
+@Injectable()
 export class AuthGuard implements CanActivate {
     path: ActivatedRouteSnapshot[]; 
     route: ActivatedRouteSnapshot;
@@ -11,7 +11,7 @@ export class AuthGuard implements CanActivate {
 
     }
 
-    CanActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot){
+    canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot) {
         const currentUser = this.authService.currentUserValue;
         if (currentUser) {
             // authorised so return true

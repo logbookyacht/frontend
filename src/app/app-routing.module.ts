@@ -6,13 +6,14 @@ import { LogComponent } from './components/log/log.component';
 import { TripsComponent } from './components/trips/trips.component';
 import { BoatComponent } from './components/boat/boat.component';
 import { HarborComponent } from './components/harbor/harbor.component'
+import { AuthGuard } from './services/authguard/auth.guard';
 
 const routes: Routes = [
-  { path: '', component: HomeComponent},
+  { path: '', redirectTo: 'home', pathMatch: 'full'},
   { path: 'login', component: LoginComponent },
-  { path: 'log', component: LogComponent },
-  { path: 'trips', component: TripsComponent },
-  { path: 'home', component: HomeComponent },
+  { path: 'log', component: LogComponent},
+  { path: 'trips', component: TripsComponent},
+  { path: 'home', component: HomeComponent},
   { path: 'boat', component: BoatComponent},
   { path: 'harbor', component: HarborComponent}
   
@@ -20,6 +21,7 @@ const routes: Routes = [
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
+  providers:[AuthGuard]
 })
 export class AppRoutingModule { }
