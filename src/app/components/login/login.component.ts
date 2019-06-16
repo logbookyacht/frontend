@@ -48,23 +48,10 @@ export class LoginComponent implements OnInit {
 
     this.loading = true;
 
-    var forge = require('node-forge')
-
-     var md = forge.md.sha256.create();
-
-// md.update('The quick brown fox jumps over the lazy dog');
-// console.log(md.digest().toHex());
-// output: d7a8fbb307d7809469ca9abcb0082e4f8d5651e46d3cdb762d02d0bf37c9e592
-
-    md.update(this.f.password.value)
-
-    var hash = md.digest().toHex();
-    console.log(hash)
-
-    this.authService.login(this.f.email.value, hash)
+    this.authService.login(this.f.email.value, this.f.password.value)
       .pipe(first())
       .subscribe(data => {
-        window.location.href = `http://${window.location.host}/home`
+        this.router.navigate([this.returnUrl])
       },
       error => {
         console.log(error)
@@ -73,5 +60,4 @@ export class LoginComponent implements OnInit {
       })
 
   }
-
 }
