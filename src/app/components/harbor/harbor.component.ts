@@ -1,7 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, AfterViewInit } from '@angular/core';
+import { FormBuilder, FormGroup, Validators, FormControl } from '@angular/forms';
+
 import { HarborService } from 'src/app/services/Harbor/harbor.service';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Harbor } from 'src/app/models/Harbor/harbor';
+
 
 @Component({
   selector: 'app-harbor',
@@ -9,8 +11,8 @@ import { Harbor } from 'src/app/models/Harbor/harbor';
   styleUrls: ['./harbor.component.css']
 })
 export class HarborComponent implements OnInit {
-  constructor(private HarborService: HarborService, private formBuilder: FormBuilder) { }
-  HarborForm: FormGroup;
+  constructor(private harborService: HarborService, private formBuilder: FormBuilder) { }
+  HarborFrom: FormGroup;
   loading = false;
   submitted = false;
   returnUrl: string;
@@ -18,7 +20,7 @@ export class HarborComponent implements OnInit {
   }
   
   async ngOnInit() {
-    this.HarborForm = this.formBuilder.group({
+    this.HarborFrom = this.formBuilder.group({
       name: ['',Validators.required],
       harbor: ['',Validators.required],
       spaces: ['',Validators.required],
@@ -26,12 +28,12 @@ export class HarborComponent implements OnInit {
     });
 
   }
-  get f() { return this.HarborForm.controls}
+  get f() { return this.HarborFrom.controls}
 
   async onSubmit() {
     this.submitted = true;
 
-    if (this.HarborForm.invalid) {
+    if (this.HarborFrom.invalid) {
       return;
     }
 
@@ -41,10 +43,10 @@ export class HarborComponent implements OnInit {
 
     harbor.name = this.f.name.value;
     harbor.harbor = this.f.harbor.value;
-    harbor.spaces = this.f.spaces.value;
-    harbor.occupied = this.f.occupied.value;
+    harbor.spaces = this.f.brand.value;
+    harbor.occupied = this.f.ft.value;
    
-    await this.HarborService.add(harbor).toPromise()
+    await this.harborService.add(harbor).toPromise()
   }
 
 }

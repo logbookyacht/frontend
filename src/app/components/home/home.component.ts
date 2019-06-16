@@ -41,7 +41,7 @@ async ngAfterViewInit() {
     this.boats.push(boat)
   }
   var hResult = await this.harborService.getAll().toPromise() as any
-  for (let i = 0; i < bResult.content.length; i++) {
+  for (let i = 0; i < hResult.content.length; i++) {
     var harbor = hResult.content[i] as Boat;
     console.log(harbor)
     this.harbors.push(harbor)
