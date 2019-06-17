@@ -20,7 +20,7 @@ export class LogPage {
       }
       
       getFieldTo(){
-        return element(by.className("to"));
+        return element(by.css("input[formControlName=to]"));
       }
       
       getSubmitButton(){

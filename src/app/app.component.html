@@ -1,4 +1,4 @@
-<nav class="navbar navbar-icon-top navbar-expand-lg navbar-dark bg-dark">
+<nav class="navbar navbar-icon-top navbar-expand navbar-dark bg-dark">
     <a class="navbar-brand" routerLink="">Logbook</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
@@ -7,31 +7,31 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
             <li class="nav-item active">
-                <a class="nav-link" routerLink="">
+                <a class="nav-link home" routerLink="">
                          Home
                     <span class="sr-only">(current)</span>
                 </a>
             </li>
             <li class="nav-item active" *ngIf="currentUser">
-                <a class="nav-link" routerLink="log">
+                <a class="nav-link log" routerLink="log">
                     Create Log
                     <span class="sr-only">(current)</span>
                 </a>
             </li>
             <li class="nav-item active" *ngIf="currentUser">
-                    <a class="nav-link" routerLink="boat">
+                    <a class="nav-link boat" routerLink="boat">
                         Create boat
                         <span class="sr-only">(current)</span>
                     </a>
                 </li>
             <li class="nav-item active" *ngIf="currentUser">
-                <a class="nav-link" routerLink="trips">
+                <a class="nav-link trips" routerLink="trips">
                     Trips
                     <span class="sr-only">(current)</span>
                 </a>
             </li>
             <li class="nav-item active" *ngIf="currentUser">
-                <a class="nav-link" routerLink="harbor">
+                <a class="nav-link harbor" routerLink="harbor">
                     Harbor
                     <span class="sr-only">(current)</span>
                 </a>

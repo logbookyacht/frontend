@@ -73,34 +73,29 @@ describe('Navbar tests', () => {
     page.navigateToHome();
     var button = await page.getTripsButton();
     button.click();
-
-    browser.sleep(1000)
-
-    TripCount = await trips.getAllTripsRows().count();
-
-    expect(browser.getCurrentUrl()).toEqual(browser.baseUrl+"attendance");
+    expect(browser.getCurrentUrl()).toEqual(browser.baseUrl+"trips");
   })
   
-  it('should go to create log page', async () => {
-    page.navigateToHome();
-    var button = await page.getLogButton();
-    button.click();
-    expect(browser.getCurrentUrl()).toEqual(browser.baseUrl+"log");
-  })
+  // it('should go to log page', async () => {
+  //   page.navigateToHome();
+  //   var button = await page.getLogButton();
+  //   button.click();
+  //   expect(browser.getCurrentUrl()).toEqual(browser.baseUrl+"log");
+  // })
   
-  it('should go to create boat page', async () => {
+  it('should go to boat page', async () => {
     page.navigateToHome();
     var button = await page.getBoatButton();
     button.click();
     expect(browser.getCurrentUrl()).toEqual(browser.baseUrl+"boat");
   })
 
-  it('should go to create harbor page', async () => {
-    page.navigateToHome();
-    var button = await page.getHarborButton();
-    button.click();
-    expect(browser.getCurrentUrl()).toEqual(browser.baseUrl+"harbor");
-  })
+  // it('should go to create harbor page', async () => {
+  //   page.navigateToHome();
+  //   var button = await page.getHarborButton();
+  //   button.click();
+  //   expect(browser.getCurrentUrl()).toEqual(browser.baseUrl+"harbor");
+  // })
 
   afterEach(async () => {
     // Assert that there are no errors emitted from the browser
@@ -121,8 +116,8 @@ describe('Create Log tests', () => {
     log = new LogPage();
   });
 
-  it('should create new project', async () => {
-    page.navigateTo("project");
+  it('should create new log', async () => {
+    page.navigateTo("log");
 
     log.getFieldName().sendKeys("Test")
     log.getFieldDate().sendKeys("Test")
@@ -133,10 +128,6 @@ describe('Create Log tests', () => {
     log.getSubmitButton().click();
 
     expect(browser.getCurrentUrl()).toEqual(browser.baseUrl+"log");
-
-
-    // var amount = await attendance.getAllAttendanceRows().count();
-    // expect(amount).toEqual((attendanceCount+1))
   })
 
   afterEach(async () => {
